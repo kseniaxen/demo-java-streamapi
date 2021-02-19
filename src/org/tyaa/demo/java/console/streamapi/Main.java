@@ -33,5 +33,8 @@ public class Main {
                         .flatMap(entry -> Stream.of(entry.getKey() + " - " + entry.getValue()))
                         .count();
         System.out.println(flatItemsCount);
+
+        String stringItems = items.entrySet().stream().reduce("", (result, s)->result + s.getKey()+" - "+s.getValue() + ", ",String::concat);
+        System.out.println(stringItems);
     }
 }
